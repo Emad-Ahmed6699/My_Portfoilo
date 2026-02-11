@@ -58,18 +58,18 @@ const ContactButton = styled(motion.a) <{ $theme: Theme }>`
   padding: 1.25rem 3rem;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #fff;
+  color: ${({ $theme }) => ($theme.key === 'light' ? '#1a202c' : '#fff')};
   border: 2px solid #3b82f6;
   background: transparent;
   border-radius: 50px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
   &::before {
     content: '';
@@ -78,7 +78,7 @@ const ContactButton = styled(motion.a) <{ $theme: Theme }>`
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
     animation: shine 3s infinite;
   }
 
@@ -89,16 +89,22 @@ const ContactButton = styled(motion.a) <{ $theme: Theme }>`
   }
 
   &:hover {
-    background: rgba(37, 211, 102, 0.1);
+    background: rgba(59, 130, 246, 0.05);
     transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.6);
     color: #25D366;
+    border-color: #3b82f6;
   }
 
   svg {
     width: 24px;
     height: 24px;
     fill: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: scale(1.1) rotate(5deg);
   }
 `;
 
