@@ -1,6 +1,6 @@
 {
   "private": true,
-  "homepage": "https://www.emadahmed.com/",
+  "homepage": "https://YOUR_USERNAME.github.io/My_Portfoilo/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -9,7 +9,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint --cache --fix --max-warnings 0 ./src/",
     "format": "prettier --cache --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "framer-motion": "^12.34.0",
@@ -32,6 +34,7 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.28.0",
     "eslint-plugin-perfectionist": "^4.14.0",
+    "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
     "jest-canvas-mock": "^2.5.2",
     "lint-staged": "^15.5.2",
