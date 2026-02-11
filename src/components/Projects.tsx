@@ -283,7 +283,7 @@ export const Projects = () => {
       title: 'E-Commerce Admin Dashboard',
       desc: 'Full-featured e-commerce admin system for managing products, orders, and customers with real-time analytics, role-based access, and a scalable high-performance architecture.',
       tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-      image: 'ecommerce.png',
+      image: 'Ecommerce.png',
       link: 'https://github.com',
     },
     {
@@ -348,7 +348,7 @@ export const Projects = () => {
           >
             <ProjectImage $theme={theme}>
               {project.image ? (
-                <img src={`img/${project.image}`} alt={project.title} />
+                <img src={`${process.env.PUBLIC_URL}/img/${project.image}`} alt={project.title} />
               ) : (
                 <motion.div
                   style={{
